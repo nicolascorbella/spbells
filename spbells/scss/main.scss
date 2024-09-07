@@ -1,0 +1,258 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+:root {
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #333;
+  --background: white;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+}
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  left: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu:has(input:checked) {
+  --foreground: white;
+  --background: #333;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--background);
+  box-shadow: 0 0 0 1px var(--foreground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: white;
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: -150%;
+  padding: 0.5rem 2rem;
+  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+  background-color: rgba(0, 0, 0, 0.788);
+  color: var(--background);
+  max-width: 44rem;
+  min-height: 100vh;
+  z-index: 20;
+  margin-top: -20%;
+}
+.sidebar nav div{
+    margin-left: 2em;
+    font-size: 2em;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+}
+header {
+    display: flex;
+    justify-content: center; /* Centra los elementos principales del header */
+    align-items: center; /* Centra verticalmente */
+    height: 100px; /* Ajusta la altura del header según prefieras */
+    background-color: #1211211f;
+    position: relative;
+}
+
+.logo {
+    width: 4em;
+    height: 4em;
+    position: absolute; /* Permite usar left y transform */
+    left: 50%; /* Posiciona el logo en el centro horizontal */
+    transform: translateX(-50%); /* Centra el logo correctamente */
+    border-radius: 5px;
+}
+
+.shopping_bag {
+    color: white;
+    position: absolute;
+    right: 20px; /* Alinea la bolsa a la derecha */
+}
+.desk-ul{display: none;}
+/* Contenedor de la imagen principal */
+.container {
+    position: relative;
+    margin-top: 0;
+    padding-top: 0;
+    z-index: -10;
+}
+
+.container img {
+    width: 100%; /* Ajusta la imagen para que ocupe el ancho del contenedor */
+    display: block;
+    margin: 0 auto; /* Centra la imagen si es necesario */
+    margin-top: -57em;
+
+}
+
+/* Contenedor de la diapositiva */
+.diapositiva {
+    width: 70vh; /* Ancho del contenedor de la diapositiva */
+    height:40vh; /* Ajusta la altura según prefieras */
+    overflow: hidden; /* Esconde las imágenes fuera del contenedor */
+    position: relative; /* Cambia a relative para evitar problemas de solapamiento */
+margin: -34% auto;
+    text-align: center;
+    z-index: -1; /* Asegura que esté por encima de otros elementos */
+}
+
+.diapositiva img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    opacity: 0;
+    transition: opacity 1s ease, left 1s ease;
+}
+
+.diapositiva img.active {
+    left: 0;
+    opacity: 1;
+}
+
+
+.diapositiva img.prev {
+    left: -100%;
+}
+
+.diapositiva img.next {
+    left: 100%;
+}
+
+@media (min-width: 800px) {
+    .hamburger-menu{
+        display: none;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: #fff8d1;
+        position: relative;
+    }
+    
+    .logo {
+        width: 4em;
+        height: 4em;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .shopping_bag {
+        color: white;
+        position: absolute;
+        right: 20px;
+    }
+    .desk-ul {
+        display: flex;
+        justify-content: center; /* Centra los elementos li en el medio */
+        padding: 0.5em;
+        margin: 0;
+        width: 100%;
+        background-color: #131212e7;
+        margin-top: 8em;
+    }
+    
+    .desk-ul ul {
+        display: flex; /* Coloca los li en una fila */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        user-select: none;
+        margin-left: 15em;
+    }
+    
+    .desk-ul ul li {
+        position: relative;
+        padding: 10px 15px; /* Añade un poco de padding */
+        color: white;
+    }
+    
+    .desk-ul ul li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px; /* El grosor de la línea */
+        background-color: white;
+        transform: scaleX(0); /* Inicialmente la línea está oculta */
+        transform-origin: left;
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+    
+    .desk-ul ul li:hover::before {
+        transform: scaleX(1); /* La línea se expande al hacer hover */
+    }
+    
+    .desk-ul ul li a {
+        text-decoration: none;
+        color: white;
+    }
+
+}
