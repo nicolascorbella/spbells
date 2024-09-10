@@ -3,7 +3,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Guardian Bell</title>
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./css/main.css" />
@@ -11,41 +13,147 @@
   <body>
     
     <header>
- 
-    <img src="./images/image_ER33QohV_1725742460538_raw.jpg" alt="" class="logo">
-    <span class="material-symbols-outlined shopping_bag">
+
+    <a href="https://deltarealesate.com"><img src="./images/logo.png" alt="" class="logo">
+    <h1><span></span>SP </span>Bells</h1></a>
+    <span class="material-symbols-outlined shopping_bag"><a href="https://deltarealesate.com/tienda">
       shopping_bag
-      </span>
-      <nav class="desk-ul" >
+      </span></a>
+      <nav class="desk-ul">
         <ul>
-          <li>productos</li>
-          <li>contacto</li>
-          <li></li>
+          <li>
+            Productos
+            <div class="productos">
+              <ol>
+                <a href="https://deltarealesate.com/cruzmalta"><li>Cruz malta</li></a>
+                <a href="https://deltarealesate.com/ruta66"><li>Ruta 66</li></a>
+                <a href="https://deltarealesate.com/cruzalada"><li>Cruz alada</li></a>
+               <a href="https://deltarealesate.com/lucky13"> <li>Lucky 13</li></a>
+               <a href="https://deltarealesate.com/ladyrider"> <li>Lady Rider</li></a>
+               <a href="https://deltarealesate.com/unoporciento"> <li>Uno por ciento</li></a>
+               <a href="https://deltarealesate.com/live"> <li>Live</li></a>
+               <a href="https://deltarealesate.com/paz"> <li>Paz</li></a>
+               <a href="https://deltarealesate.com/manopla"> <li>Manopla</li></a>
+               <a href="https://deltarealesate.com/calavera"> <li>Calavera</li></a>
+               <a href="https://deltarealesate.com/motocrucis"> <li>Moto crucis</li></a>
+              </ol>
+            </div>
+          </li>
+          <a href="https://deltarealesate.com/tienda"><li>Tienda</li></a>
+          <a href="https://deltarealesate.com/historia"><li>Leyenda</li></a>
         </ul>
       </nav>
   </header>
   <label class="hamburger-menu">
-    <input type="checkbox" />
+    <input type="checkbox" id="menu-toggle" />
   </label>
   <aside class="sidebar">
     <nav>
       <div>Inicio</div>
-      <div>Is</div>
-      <div>The</div>
-      <div>Sidebar</div>
+      <div class="headerline"></div>
+      <div><a href="https://deltarealesate.com/tienda">Tienda</div></a>
+      <div class="headerline"></div>
+      <div><a href="https://deltarealesate.com/historia">La leyenda de la campana</div></a>
+      <div class="headerline"></div>
+      
     </nav>
   </aside>
-  <div class="container">
-    <img src="images/iron.jpg" alt="">
-    
-  </div>
-  <main class="diapositiva">
-    <img src="images/img1.jpg" alt="Imagen 1">
-    <img src="images/img2.jpg" alt="Imagen 2">
-    <img src="images/img3.jpg" alt="Imagen 3">
-    <img src="images/img4.jpg" alt="Imagen 4">
+  <article class="destacados">
+    <h2>Productos destacados</h2>
+
+    <!-- Primer producto (Ruta 66) con enlace y etiqueta "MÁS VENDIDO" -->
+    <a class="tarjeta-producto" href="./ruta66">
+        <div class="tarjeta-producto">
+            <img src="ruta66/img1.jpg" alt="Ruta 66">
+            <h4>Ruta 66</h4>
+            <div class="masvendido">MÁS VENDIDO</div>
+        </div>
+    </a>
+
+    <!-- Segundo producto (Calavera) con enlace -->
+    <a class="tarjeta-producto" href="./calavera">
+        <div class="tarjeta-producto">
+            <img src="calavera/img1.jpg" alt="Calavera">
+            <h4>Calavera</h4>
+        </div>
+    </a>
+
+    <!-- Tercer producto (Malta) con enlace -->
+    <a class="tarjeta-producto" href="./cruzmalta">
+        <div class="tarjeta-producto">
+            <img src="cruzmalta/img1.jpg" alt="Malta">
+            <h4>Malta</h4>
+        </div>
+    </a>
+
+    <!-- Cuarto producto (Paz) con enlace -->
+    <a class="tarjeta-producto" href="./paz">
+        <div class="tarjeta-producto">
+            <img src="paz/img1.jpg" alt="Paz">
+            <h4>Paz</h4>
+        </div>
+    </a>
+
+</article>
+
+  <div class="slider" >
+
+  <main class="diapositiva-mobile">
+
+    <img src="images/imgmobile1.jpg" alt="Imagen 2">
+    <img src="images/imgmobile2.jpg" alt="Imagen 3">
+    <img src="images/imgmobile3.jpg" alt="Imagen 4">
 
 </main>
+<main class="diapositiva-pc">
+
+  <img src="images/img1.jpg" alt="Imagen 2">
+  <img src="images/img2.jpg" alt="Imagen 3">
+  <img src="images/img3.jpg" alt="Imagen 4">
+
+</main>
+<section class="galeria">
+  <div class="galeria-carrusel">
+      <div class="carrusel-items">
+          <img src="./png/live.png" alt="Imagen 1">
+          <img src="./png/unoporciento.png" alt="Imagen 2">
+          <img src="/png/calavera.png" alt="Imagen 3">
+          <img src="/png/cruzalada.png" alt="Imagen 4">
+          <img src="/png/cruzmalta.png" alt="Imagen 5">
+          <img src="png/paz.png" alt="imagen 6">
+          <img src="png/manopla.png" alt="imagen 7">
+          <img src="png/lucky13.png" alt="imagen 8">
+          <img src="png/ruta66.png" alt="imagen 9">
+          <img src="png/ladyrider.png" alt="imagen10">
+      </div>
+  </div>
+</section>
+
+</div>
+  <div class="container">
+    <img src="images/iron.jpg" alt="" class="wallpaper">
+    <img src="images/iron.jpg" alt="" class="wallpaper rotada">
+    <img src="./images/iron2.jpg" alt="" class="wallpaper-pc">
+    <img src="./images/iron2.jpg" alt="" class="wallpaper-pc rotada fad">
+    </div>
+
+<footer>
+  <div class="redes">Redes Sociales</div>
+  <div class="footerline"></div>
+  <picture>  <a href="https://www.facebook.com/profile.php?id=61552309236999" target="_blank">
+      <img class="footer-img" src="../images/fb.png">
+</a>
+<a href="https://www.instagram.com/bairesrealestate/" target="_blank">
+  
+  <img class="" src="../images/ig.png">
+</a>
+<a href="https://wa.link/jkkn0f" target="_blank">
+  
+  <img class="" src="../images/wpp.png">
+</a></picture>
+
+  <p>SP Bells</p>
+</footer>
 <script src="script.js"></script>
   </body>
 </html>
